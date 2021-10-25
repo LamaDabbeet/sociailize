@@ -1,0 +1,65 @@
+@import "../../../theme/colors";
+@import "../../../theme/fonts";
+
+.slider {
+	padding: 2.5rem 4rem;
+	h2 {
+		font-size: $fontLarge;
+		color: $textColor;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	p {
+		font-size: $fontMedium;
+		color: $textColor;
+	}
+	.carousel-item {
+		.rounded-image {
+			margin: auto;
+			width: 10.7rem;
+			height: 10.7rem;
+			background-color: $primaryColor;
+			border-radius: 50%;
+		}
+	}
+	.carousel-control-prev,
+	.carousel-control-next {
+		top: -40% !important;
+	}
+	.carousel-control-prev-icon,
+	.carousel-control-next-icon {
+		background-image: none;
+	}
+
+	.carousel-control-next-icon:after {
+		content: ">";
+		font-size: 44px;
+		color: $primaryColor;
+	}
+
+	.carousel-control-prev-icon:after {
+		content: "<";
+		font-size: 44px;
+		color: $primaryColor;
+	}
+	.carousel-indicators {
+		display: flex !important;
+		align-items: center !important;
+		bottom: -3rem;
+		button {
+			width: 0.75rem !important;
+			height: 0.75rem !important;
+			border-radius: 50% !important;
+			background-color: white !important;
+			border: 1px solid $accentColor !important;
+		}
+		.active {
+			background-color: $accentColor !important;
+			width: 1.125rem !important;
+			height: 1.125rem !important;
+		}
+	}
+	.button-wrapper {
+		margin-top: 3rem;
+	}
+}

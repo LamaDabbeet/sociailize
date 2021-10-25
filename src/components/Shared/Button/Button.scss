@@ -1,0 +1,12 @@
+@import "../../../theme/colors";
+@import "../../../theme/fonts";
+
+button {
+	padding: 0.78125rem 1.75rem;
+	border: none;
+	background-color: $buttonColor;
+	border-radius: 1.75rem !important;
+	font-size: $fontXSmall;
+	color: $darkTextColor;
+	font-weight: bold;
+}

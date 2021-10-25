@@ -1,0 +1,16 @@
+@import "../../theme/colors";
+@import "../../theme/fonts";
+
+.banner {
+	background-color: $lightBGColor;
+	color: $textColor;
+	padding: 3rem 4rem 1.5rem;
+	h1 {
+		padding-bottom: 1rem;
+		font-size: $fontLarge;
+		line-height: 1.437rem;
+	}
+	p {
+		font-size: $fontXSmall;
+	}
+}

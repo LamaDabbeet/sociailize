@@ -1,0 +1,15 @@
+@import "../../theme/colors";
+
+.navbar {
+	.avatar {
+		border-radius: 50%;
+		width: 2.75rem;
+		height: 2.75rem;
+		background-color: $primaryColor;
+	}
+	/* 	.nav-items{
+		ul{
+			list-style: none
+		}
+	} */
+}
