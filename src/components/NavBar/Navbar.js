@@ -1,45 +1,76 @@
-import React from 'react';
+import React,{useState} from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMapMarkerAlt,faMap, faBars,faChevronLeft,faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import './Navbar.scss';
-import {Container,NavDropdown,Nav,Offcanvas} from 'react-bootstrap'
 
 export const Navbar=(props)=> {
+const [isOpened,setIsOpen ]=useState(false);
+ const [clicked, setClicked] = useState(false);
 
+  const toggle = index => {
+    if (clicked === index) {
+      return setClicked(null);
+    }
+
+    setClicked(index);
+  };
+   const listData = [
+  {    
+    listTitle: 'ASTHMA',
+    list: ['SPOTTING THE SYMPTOMS','ASTHMA FIRST-AID TIPS','MANAGING YOUR CONDITION','HOW CAN ASTHMA BE CONTROLLED?','MONITORING ASTHMA'] 
+  },
+  {
+   listTitle: 'SEVERE ASTHMA',
+    list: ['List Item1','List Item2'] 
+  },
+  {
+    listTitle: 'COPD',
+    list: ['List Item1','List Item2','List Item3'] 
+  }
+];
     return (
     <React.Fragment>
-        <div className="navbar">
-    {/*        <div className="avatar">  
-            </div> */}
-          
-            <Navbar bg="light" expand={false}>
-                <Container fluid>
-                    <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="offcanvasNavbar" />
-                    <Navbar.Offcanvas
-                    id="offcanvasNavbar"
-                    aria-labelledby="offcanvasNavbarLabel"
-                    placement="end"
-                    >
-                    <Offcanvas.Header closeButton>
-                        <Offcanvas.Title id="offcanvasNavbarLabel">Offcanvas</Offcanvas.Title>
-                    </Offcanvas.Header>
-                    <Offcanvas.Body>
-                        <Nav className="justify-content-end flex-grow-1 pe-3">
-                        <Nav.Link href="#action1">Home</Nav.Link>
-                        <Nav.Link href="#action2">Link</Nav.Link>
-                        <NavDropdown title="Dropdown" id="offcanvasNavbarDropdown">
-                            <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action5">
-                            Something else here
-                            </NavDropdown.Item>
-                        </NavDropdown>
-                        </Nav>
-                   
-                    </Offcanvas.Body>
-                    </Navbar.Offcanvas>
-                </Container>
-            </Navbar>
+    <div className="wrapper" className={'sidenav ' +(isOpened ? 'opened':'closed')}>
+        <div className="top-sidebar">
+           <div className="d-flex align-items-center">
+              <FontAwesomeIcon icon={faChevronLeft} className="me-2" onClick={()=>setIsOpen(false)}/>
+              <div className="avatar"></div>
+           </div>
         </div>
+        <div id="mySidenav" >
+          <div className="wrapper">
+                <div className="accordion">
+                    {listData.map((item, index) => {
+                        return (
+                        <>
+                            <div className="wrap" onClick={() => toggle(index)} key={index}>
+                            <h1>{item.listTitle}</h1>
+                            <span className={'rotate ' + (clicked === index ?'up':'')}><FontAwesomeIcon  icon={faChevronDown} /> </span>
+                            </div>
+                            {clicked === index ? (
+                            <div className="dropdown">
+                                <ul>
+                                {item.list.map((listMember,i)=>{
+                                return (<li key={i} className="d-flex align-items-center"><div>{listMember}</div></li>);
+                                })}   
+                                </ul>    
+                            </div>
+                            ) : null}
+                        </>
+                        );
+                    })}
+                </div>
+          </div>
+        </div> 
+    </div>
+    
+    <div className="navbar">
+        <div className="avatar"></div>
+        <div className="d-flex align-items-center">
+            <a className="mx-2"><FontAwesomeIcon icon={faMap} /></a> |
+            <a className="mx-2"><FontAwesomeIcon icon={faMapMarkerAlt} /></a> |
+            <a className="ms-2"><FontAwesomeIcon icon={faBars} onClick={()=>setIsOpen(true)} /></a>
+        </div>
+    </div>
     </React.Fragment>)
 };

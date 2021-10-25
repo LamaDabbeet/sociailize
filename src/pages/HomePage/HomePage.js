@@ -1,15 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Navbar } from '../../components/NavBar/Navbar';
 import { Banner } from '../../components/Banner/Banner';
 import { Footer } from '../../components/Footer/Footer';
 import { Slider } from '../../components/Shared/Slider/Slider';
-import { Button } from '../../components/Shared/Button/Button';
-import { Modal } from 'react-bootstrap';
+import { CustomModal } from '../../components/Shared/CustomModal/CustomModal';
+
 
 export const HomePage = () =>{
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
     const sliderImages=[{
         title:'title1',
@@ -64,7 +61,6 @@ export const HomePage = () =>{
                 backgroundColor={'white'}
              >
              </Slider>
-         
             <Footer></Footer>
         </React.Fragment>
         )

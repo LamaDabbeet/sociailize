@@ -29,7 +29,6 @@ export const ContentPage = () =>{
              buttonText={'Take the Test'}
              bannerTitle={'LOREM IPSUM DOLOR SIT AMET,CONSETETUR'}
              bannerSubTitle={'Lorem. ipsum dolor sit amet, consetetur sadipscing elitr, sed diam invidunt ut labore'}
-            
              >
              </Banner>
             <Slider

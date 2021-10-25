@@ -26,6 +26,5 @@ export const Slider=(props)=> {
         <p className="text-center">{para}</p>
         <Button buttonText={buttonText}></Button>
     </div>
-
   </div>
 )};
