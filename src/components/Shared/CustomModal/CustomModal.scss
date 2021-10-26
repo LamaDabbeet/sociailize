@@ -1,27 +1,25 @@
 @import "../../../theme/colors";
 @import "../../../theme/fonts";
 
-.modal{
-    .modal-dialog{
-      display: flex;
-      justify-content: center;
-      align-items:center;
-      .modal-content{
-        width: 17.6rem !important;
-        height: 17.6rem !important;
-        .modal-header{
-            border-bottom:none !important
-        }
-        .modal-body{
-            font-size:$fontMedium;
-            color:$textColor
-        }  
-        .modal-footer{
-            border-top: none !important;
-            justify-content:center !important
-        }
-     }
+.modal {
+  .modal-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .modal-content {
+      width: 17.6rem !important;
+      height: 17.6rem !important;
+      .modal-header {
+        border-bottom: none !important;
+      }
+      .modal-body {
+        font-size: $fontMedium;
+        color: $textColor;
+      }
+      .modal-footer {
+        border-top: none !important;
+        justify-content: center !important;
+      }
+    }
   }
 }
-
-
